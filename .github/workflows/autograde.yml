@@ -1,0 +1,31 @@
+name: Autograde
+on:
+  push:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  grade:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install pytest
+        run: python -m pip install pytest
+      - name: Verify published grader
+        run: python -m pytest -q
+      - name: Grade own fork's visible worksheets
+        run: |
+          python scripts/autograde.py \
+            --repository-owner "${{ github.repository_owner }}" \
+            --output .grading/summary.json
+      - name: Upload evidence report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grading-report
+          path: .grading/summary.json
+          if-no-files-found: warn
+          retention-days: 30

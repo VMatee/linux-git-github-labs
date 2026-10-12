@@ -1,0 +1,9 @@
+{
+  "commands": {
+    "init_repo": "",
+    "stage_file": "",
+    "commit_change": "",
+    "check_status": "",
+    "show_history": ""
+  }
+}

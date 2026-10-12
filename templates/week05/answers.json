@@ -1,0 +1,9 @@
+{
+  "commands": {
+    "new_branch": "",
+    "list_branches": "",
+    "merge_branch": "",
+    "show_diff": "",
+    "switch_main": ""
+  }
+}

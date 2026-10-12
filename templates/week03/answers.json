@@ -1,0 +1,9 @@
+{
+  "commands": {
+    "make_executable": "",
+    "list_processes": "",
+    "sort_lines": "",
+    "redirect_output": "",
+    "pipe_filter": ""
+  }
+}

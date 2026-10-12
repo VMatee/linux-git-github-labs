@@ -1,0 +1,9 @@
+{
+  "commands": {
+    "print_path": "",
+    "list_hidden": "",
+    "create_dir": "",
+    "change_dir": "",
+    "make_file": ""
+  }
+}

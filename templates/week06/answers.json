@@ -1,0 +1,9 @@
+{
+  "commands": {
+    "add_remote": "",
+    "fetch_remote": "",
+    "push_branch": "",
+    "pull_remote": "",
+    "clone_repo": ""
+  }
+}

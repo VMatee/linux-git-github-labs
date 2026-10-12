@@ -1,0 +1,9 @@
+{
+  "commands": {
+    "read_file": "cat notes.txt",
+    "copy_file": "cp notes.txt backup.txt",
+    "move_file": "mv backup.txt archive.txt",
+    "remove_file": "rm archive.txt",
+    "search_text": "grep error app.log"
+  }
+}

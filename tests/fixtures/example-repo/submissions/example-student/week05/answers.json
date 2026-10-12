@@ -1,0 +1,9 @@
+{
+  "commands": {
+    "new_branch": "git switch -c feature",
+    "list_branches": "git branch",
+    "merge_branch": "git merge feature",
+    "show_diff": "git diff",
+    "switch_main": "git switch main"
+  }
+}

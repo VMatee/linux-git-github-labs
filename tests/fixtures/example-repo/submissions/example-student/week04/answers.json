@@ -1,0 +1,9 @@
+{
+  "commands": {
+    "init_repo": "git init",
+    "stage_file": "git add main.py",
+    "commit_change": "git commit -m demo",
+    "check_status": "git status",
+    "show_history": "git log --oneline"
+  }
+}

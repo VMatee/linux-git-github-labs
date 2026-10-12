@@ -1,0 +1,9 @@
+{
+  "commands": {
+    "make_executable": "chmod +x script.sh",
+    "list_processes": "ps aux",
+    "sort_lines": "sort names.txt",
+    "redirect_output": "echo hello > hello.txt",
+    "pipe_filter": "cat app.log | grep ERROR"
+  }
+}

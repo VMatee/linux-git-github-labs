@@ -1,0 +1,9 @@
+{
+  "commands": {
+    "read_file": "",
+    "copy_file": "",
+    "move_file": "",
+    "remove_file": "",
+    "search_text": ""
+  }
+}
