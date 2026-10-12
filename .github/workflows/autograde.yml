@@ -14,6 +14,8 @@ jobs:
           python-version: '3.11'
       - name: Install pytest
         run: python -m pip install pytest
+      - name: Check Linux setup script syntax
+        run: bash -n scripts/check_environment.sh
       - name: Verify published grader
         run: python -m pytest -q
       - name: Grade own fork's visible worksheets

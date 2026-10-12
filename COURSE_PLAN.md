@@ -2,6 +2,8 @@
 
 Welcome! By the end, you should be able to use a Linux terminal, manage your code history, collaborate through GitHub, and present a project to an employer.
 
+**Before Session 01:** [Windows users — install WSL2 and Ubuntu](docs/setup/windows-wsl2.md) · [Ubuntu Linux users — native setup](docs/setup/ubuntu-linux.md) · [Student submission guide](docs/STUDENT_GUIDE.md). All Linux and Git exercises run in an Ubuntu terminal for both OS paths.
+
 If your class meets only 13 times, follow the schedule announced by your lecturer.
 
 | Session | Topic | Hands-on outcome | Lesson |
@@ -29,7 +31,7 @@ Create a small Python or C/C++ utility you can confidently explain. During the c
 ## Prepare for each session
 
 - Read the lesson linked above.
-- Bring your laptop, a terminal, Git, and access to your GitHub account.
+- Bring your laptop with an Ubuntu terminal (native or WSL2), Git, Python, GitHub CLI, and access to your GitHub account.
 - Write down commands you do not understand and try them on disposable sample files.
 - Keep a short changelog of what you learned.
 

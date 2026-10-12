@@ -1,66 +1,118 @@
-# Student guide · Set up, practice, and submit
+# Student guide — Install, fork, clone, and submit
 
-Welcome to Linux, Git & GitHub Labs! You do **not** need to know Git or Linux before starting.
+This course supports **Windows 10/11 (Ubuntu in WSL2)** and **Ubuntu Linux (native)**. You only need basic Python/C/C++ programming knowledge; you do not need prior Linux or Git experience.
 
-## 1. Before your first lab
+## Step 1 — Prepare your computer (choose ONE guide)
 
-- Create a GitHub account with a username you are comfortable showing publicly.
-- Install [Git](https://git-scm.com/downloads) and check: `git --version`.
-- For Linux lessons, use an Ubuntu/Linux shell (a lab Linux computer or WSL on Windows).
-- Configure your Git commit identity (you may use a verified GitHub noreply address):
+| You use | What to follow |
+| --- | --- |
+| **Windows 10/11** | [Install WSL2 + Ubuntu step by step](setup/windows-wsl2.md) |
+| **Ubuntu Linux** | [Set up Git, Python and GitHub CLI](setup/ubuntu-linux.md) |
+
+From here onward, **all terminal commands are in the Ubuntu Bash terminal on both computer types**. On Windows, do not paste these commands into PowerShell/CMD. [Confused about terminals?](setup/README.md)
+
+## Step 2 — Verify your tools and sign in (Ubuntu)
+
+Run the following in your Ubuntu terminal:
 
 ```bash
-git config --global user.name "Your Name"
+git --version
+python3 --version
+gh --version
+git config --global user.name
+git config --global user.email
+gh auth status
+```
+
+If Git name or email is blank, set it to your own name and GitHub-verified email (or GitHub noreply email):
+
+```bash
+git config --global user.name "Your Full Name"
 git config --global user.email "your-verified-email@example.com"
 ```
 
-Never put your GitHub password or access token into a repository.
-
-## 2. Make your fork
-
-Open [the course repository](https://github.com/VMatee/linux-git-github-labs) and click **Fork**. Select your own account, then clone **your fork**:
+If `gh auth status` shows that you are not logged into GitHub in Ubuntu, run:
 
 ```bash
+gh auth login --hostname github.com --git-protocol https --web
+gh auth setup-git
+```
+
+Complete the sign-in in your web browser, using the one-time code if provided. Do not add passwords or tokens to your project.
+
+## Step 3 — Fork the course on GitHub
+
+1. Sign in at [github.com](https://github.com).
+2. Open [VMatee/linux-git-github-labs](https://github.com/VMatee/linux-git-github-labs).
+3. Click **Fork** → select **your own GitHub account** → **Create fork**.
+4. Check that the repository at the top of the page is `YOUR_USERNAME/linux-git-github-labs`.
+
+Your fork is your personal learning workspace, not the teacher's repository.
+
+## Step 4 — Clone YOUR fork (Ubuntu)
+
+```bash
+mkdir -p ~/projects
+cd ~/projects
 git clone https://github.com/YOUR_USERNAME/linux-git-github-labs.git
 cd linux-git-github-labs
 git remote -v
 ```
 
-Replace `YOUR_USERNAME` everywhere with your GitHub username. Confirm that `origin` points to your account—not `VMatee`.
+**Replace `YOUR_USERNAME` everywhere** with your real GitHub username. The `origin` URL must point to your GitHub account. For Windows/WSL2, use `~/projects` in the **Linux filesystem**, not `/mnt/c/Users/...`.
 
-## 3. Complete your first worksheet
+Run the readiness check:
 
 ```bash
+bash scripts/check_environment.sh
+```
+
+If anything is missing, use [setup troubleshooting](setup/troubleshooting.md).
+
+## Step 5 — Practice Week 01 in a safe location
+
+Read [Week 01: Your first Linux terminal](../weeks/week01/README.md). Practice file commands in a temporary directory outside this course repository. Understand each step before completing the worksheet.
+
+## Step 6 — Make the first homework branch
+
+Return to your own cloned fork and create a branch:
+
+```bash
+cd ~/projects/linux-git-github-labs
 git switch -c lab/week01
 mkdir -p submissions/YOUR_USERNAME/week01
 cp templates/week01/answers.json submissions/YOUR_USERNAME/week01/answers.json
+nano submissions/YOUR_USERNAME/week01/answers.json
 ```
 
-Open `submissions/YOUR_USERNAME/week01/answers.json` in an editor. Fill the **command strings** requested by [Week 01](../weeks/week01/README.md), using valid JSON syntax. Practice each command separately in a throwaway Linux working directory.
+Fill in the requested **command strings** inside the JSON file. Keep quotes and commas valid. In the Nano editor, save with **Ctrl + O**, Enter, and exit with **Ctrl + X**.
+
+## Step 7 — Commit and push to YOUR fork
 
 ```bash
 git status
 git add submissions/YOUR_USERNAME/week01/answers.json
-git commit -m "lab01: practice Linux navigation"
+git commit -m "lab01: Linux navigation practice"
 git push -u origin lab/week01
 ```
 
-On GitHub, create a pull request **from `lab/week01` into `main` of your own fork** (not into the instructor's repository). Inspect the changes and merge it when ready.
+On GitHub, inspect your feature branch. Optionally open a pull request into `main` of **your own fork** (make sure the **base repository** is your account, not VMatee); review and merge it. Pushing your branch also triggers a learning check.
 
-## 4. Check your result
+## Step 8 — Review your GitHub Actions feedback
 
-After merging, open **Actions** in your own fork. GitHub may ask you to enable workflows on a newly forked repository. The **Autograde** workflow runs on pushes to your fork; you can also run it via **Run workflow** on `main`.
+1. Open **your fork → Actions** in the browser.
+2. If asked, **enable workflows** on your fork.
+3. Open the most recent **Autograde** run for your branch or `main`.
+4. Check whether it succeeded. If not, expand the failed step, read the message, fix your file, commit and push again.
 
-If a check fails, read the logs, update your worksheet, commit, and push again. The checks provide feedback for Weeks 01–06. They do not replace the in-class practical work.
+The automated check provides feedback on Weeks 01–06 worksheets; you must still be able to demonstrate the actual commands. For other weeks, follow the assigned project instructions.
 
-For later weeks, follow the linked weekly lessons and your lecturer's submission instructions.
+## Step 9 — Submit your repository link safely
 
-## 5. Share your work safely
+Share your GitHub username and **fork URL** through the private channel provided by your lecturer. Never upload student IDs, grade records, private emails, passwords, access tokens, or confidential files to public GitHub.
 
-Submit your **GitHub username and fork URL** using the private classroom channel provided by your lecturer. Do not post real names with student IDs, class rosters, personal email addresses, credentials, or grade details in public GitHub Issues or files.
+## Next
 
-## 6. Build a lasting portfolio
+Follow the [15-session roadmap](../COURSE_PLAN.md) and build a portfolio-quality Python or C/C++ project with a useful README, tests, commits, branches, and pull requests.
 
-Choose descriptive repository names, add installation/run instructions, write tests, and make small meaningful commits. Use GitHub Issues and pull requests to show how you collaborate. Stars and followers are optional—not proof of skill.
-
-**Troubleshooting:** `git status` explains your local changes; `git remote -v` shows where you will push; the Actions tab contains workflow logs.
+**Useful projects matter more than stars and follower counts.**

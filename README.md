@@ -8,15 +8,26 @@ A hands-on, beginner-friendly engineering course taught through short explanatio
 
 **15 sessions · Linux command line · Git · GitHub · collaboration · portfolio**
 
+## Choose your operating system
+
+| Your computer | Begin here |
+| --- | --- |
+| **Windows 10/11** | [**Install WSL2 + Ubuntu** — step-by-step illustrated-by-commands guide](docs/setup/windows-wsl2.md) |
+| **Ubuntu Linux** | [**Native Ubuntu setup** — install Git, Python and GitHub CLI](docs/setup/ubuntu-linux.md) |
+
+**Same course, same commands:** Windows students run all Linux labs **inside Ubuntu on WSL2**; Linux students use the **Ubuntu terminal** directly. **Do not use Windows CMD or PowerShell for Linux lab commands.**
+
+[Check which terminal to use, see the readiness checklist, and get help →](docs/setup/README.md)
+
 ## Start learning
 
-1. [Read the student setup guide](docs/STUDENT_GUIDE.md).
+1. [Choose your Windows/Ubuntu setup](docs/setup/README.md), then [follow the Student Guide](docs/STUDENT_GUIDE.md).
 2. [Explore the 15-session learning roadmap](COURSE_PLAN.md).
 3. Open [Week 01: Linux navigation](weeks/week01/README.md) and follow the exercises.
 4. Work in a **disposable practice directory** and keep your work in your own GitHub fork.
 5. Use [GitHub Actions](https://github.com/VMatee/linux-git-github-labs/actions) to check the early command worksheets.
 
-> **Windows users:** Linux commands are intended for an actual Linux shell such as Ubuntu, WSL, or a lab Linux computer. PowerShell/CMD syntax is not always equivalent.
+**Setup check (after cloning your fork):** Run `bash scripts/check_environment.sh` inside **Ubuntu**. If it reports a missing tool or login, use [setup troubleshooting](docs/setup/troubleshooting.md).
 
 ## Learning roadmap
 
@@ -40,7 +51,7 @@ mkdir -p submissions/YOUR_USERNAME/week01
 cp templates/week01/answers.json submissions/YOUR_USERNAME/week01/answers.json
 ```
 
-Replace `YOUR_USERNAME` with your GitHub username, then edit the copied worksheet and follow the [student guide](docs/STUDENT_GUIDE.md) to commit and push. Fork this repository on GitHub **before** cloning your copy.
+Replace `YOUR_USERNAME` with your GitHub username, then edit the copied worksheet and follow the [student guide](docs/STUDENT_GUIDE.md) to commit and push. Fork this repository on GitHub **before** cloning your copy. Run these commands inside **Ubuntu** on both operating systems.
 
 ## What you'll create
 
