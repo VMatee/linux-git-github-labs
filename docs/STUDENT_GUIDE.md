@@ -1,43 +1,66 @@
-# Student guide: make a first fork and submit homework
+# Student guide · Set up, practice, and submit
 
-Your instructor will provide the official course repository URL.
+Welcome to Linux, Git & GitHub Labs! You do **not** need to know Git or Linux before starting.
 
-1. Create a GitHub account (use a professional nickname, not a student ID).
-2. Click **Fork** on the official course repo to create your own public fork.
-3. In the fork, go to **Actions** and enable workflows when GitHub asks.
-4. On your computer, run:
+## 1. Before your first lab
 
-   ```bash
-   git clone https://github.com/YOUR_USERNAME/linux-git-github-labs.git
-   cd linux-git-github-labs
-   git switch -c lab/week01
-   mkdir -p submissions/YOUR_USERNAME/week01
-   cp templates/week01/answers.json submissions/YOUR_USERNAME/week01/answers.json
-   ```
+- Create a GitHub account with a username you are comfortable showing publicly.
+- Install [Git](https://git-scm.com/downloads) and check: `git --version`.
+- For Linux lessons, use an Ubuntu/Linux shell (a lab Linux computer or WSL on Windows).
+- Configure your Git commit identity (you may use a verified GitHub noreply address):
 
-5. Fill out the answers using a text editor and save them as valid JSON.
-6. Commit and push:
+```bash
+git config --global user.name "Your Name"
+git config --global user.email "your-verified-email@example.com"
+```
 
-   ```bash
-   git add submissions/YOUR_USERNAME/week01/answers.json
-   git commit -m "lab01: practice basic Linux commands"
-   git push -u origin lab/week01
-   ```
+Never put your GitHub password or access token into a repository.
 
-7. Inspect **Actions → Autograde** in your own fork. Review the results and
-   download its `grading-report` artifact if you want to see your own feedback.
-8. For subsequent weeks, follow your lecturer's instructions about branches.
-   Keep the existing submissions; do not overwrite a previous week's work.
+## 2. Make your fork
 
-**What to submit to the lecturer:** your GitHub username and public fork URL
-through the private course registration channel, not through GitHub Issues.
-The instructor will use the private roster for aggregation.
+Open [the course repository](https://github.com/VMatee/linux-git-github-labs) and click **Fork**. Select your own account, then clone **your fork**:
 
-## Important
+```bash
+git clone https://github.com/YOUR_USERNAME/linux-git-github-labs.git
+cd linux-git-github-labs
+git remote -v
+```
 
-- Auto-grader checks visible answers; it does not prove you ran a command.
-- Never put tokens, private class files, access keys, student IDs or grades
-  into your public repository.
-- Do not copy answers or fake commits. Be ready to explain commands in class.
-- Stars, followers and fork counts are not graded.
-- After this course, keep your repository clean and build your own portfolio.
+Replace `YOUR_USERNAME` everywhere with your GitHub username. Confirm that `origin` points to your account—not `VMatee`.
+
+## 3. Complete your first worksheet
+
+```bash
+git switch -c lab/week01
+mkdir -p submissions/YOUR_USERNAME/week01
+cp templates/week01/answers.json submissions/YOUR_USERNAME/week01/answers.json
+```
+
+Open `submissions/YOUR_USERNAME/week01/answers.json` in an editor. Fill the **command strings** requested by [Week 01](../weeks/week01/README.md), using valid JSON syntax. Practice each command separately in a throwaway Linux working directory.
+
+```bash
+git status
+git add submissions/YOUR_USERNAME/week01/answers.json
+git commit -m "lab01: practice Linux navigation"
+git push -u origin lab/week01
+```
+
+On GitHub, create a pull request **from `lab/week01` into `main` of your own fork** (not into the instructor's repository). Inspect the changes and merge it when ready.
+
+## 4. Check your result
+
+After merging, open **Actions** in your own fork. GitHub may ask you to enable workflows on a newly forked repository. The **Autograde** workflow runs on pushes to your fork; you can also run it via **Run workflow** on `main`.
+
+If a check fails, read the logs, update your worksheet, commit, and push again. The checks provide feedback for Weeks 01–06. They do not replace the in-class practical work.
+
+For later weeks, follow the linked weekly lessons and your lecturer's submission instructions.
+
+## 5. Share your work safely
+
+Submit your **GitHub username and fork URL** using the private classroom channel provided by your lecturer. Do not post real names with student IDs, class rosters, personal email addresses, credentials, or grade details in public GitHub Issues or files.
+
+## 6. Build a lasting portfolio
+
+Choose descriptive repository names, add installation/run instructions, write tests, and make small meaningful commits. Use GitHub Issues and pull requests to show how you collaborate. Stars and followers are optional—not proof of skill.
+
+**Troubleshooting:** `git status` explains your local changes; `git remote -v` shows where you will push; the Actions tab contains workflow logs.

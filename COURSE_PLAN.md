@@ -1,44 +1,36 @@
-# 15-meeting syllabus
+# Course roadmap · 15 sessions
 
-This plan is designed for 13–15 teaching meetings. For a 13-meeting semester,
-combine meetings 02+03 and 11+12; keep hands-on activities and the final
-showcase. Suggested split per meeting: 25% concepts, 60% practice, 15%
-review and reflection.
+Welcome! By the end, you should be able to use a Linux terminal, manage your code history, collaborate through GitHub, and present a project to an employer.
 
-| Meeting | Topic | Practical result | Assessment |
-|---|---|---|---|
-| 01 | Linux terminal & navigation | `pwd`, `ls`, `cd`, `mkdir`, `touch` | Week 01 command worksheet |
-| 02 | Files, searching, pipes | `cat`, `cp`, `mv`, `rm`, `grep` | Week 02 worksheet |
-| 03 | Permissions, shell scripts, processes | `chmod`, redirection, `ps` | Week 03 worksheet |
-| 04 | Git local repositories | `init`, `status`, `add`, `commit`, `log` | Week 04 worksheet |
-| 05 | Branching & merge | `switch`, `branch`, `merge`, `diff` | Week 05 worksheet |
-| 06 | Git remotes | `clone`, `remote`, `fetch`, `pull`, `push` | Week 06 worksheet |
-| 07 | GitHub Fork and PR | first public contribution to own fork | PR link + review |
-| 08 | Issues & review | issue template + constructive code review | Peer feedback |
-| 09 | Conflicts and recovery | resolve conflict and `revert` | Screen recording or live demo |
-| 10 | GitHub Actions CI | add automated test to Python or C/C++ repo | Successful workflow |
-| 11 | Team collaboration I | task split, branch protection concepts | Team project plan |
-| 12 | Team collaboration II | integrating tested changes via PR | Team review evidence |
-| 13 | Public documentation | practical README, license and changelog | README rubric |
-| 14 | Portfolio project | individual reusable open-source project | Executable demo |
-| 15 | Portfolio showcase | explain decisions, limitations, evidence | Demonstration & reflection |
+If your class meets only 13 times, follow the schedule announced by your lecturer.
 
-## Course-scale operations
+| Session | Topic | Hands-on outcome | Lesson |
+| --- | --- | --- | --- |
+| 01 | Getting around Linux | Navigate and create a workspace | [Week 01](weeks/week01/README.md) |
+| 02 | Working with files | Read, search, copy, and move files | [Week 02](weeks/week02/README.md) |
+| 03 | Shell essentials | Permissions, processes, pipes | [Week 03](weeks/week03/README.md) |
+| 04 | Your first local repository | Stage, commit, and inspect history | [Week 04](weeks/week04/README.md) |
+| 05 | Branching and merging | Work safely on a feature branch | [Week 05](weeks/week05/README.md) |
+| 06 | Remote collaboration basics | Clone, fetch, push, pull | [Week 06](weeks/week06/README.md) |
+| 07 | Forks and pull requests | Propose changes and inspect a diff | [Week 07](weeks/week07/README.md) |
+| 08 | Issues and code review | Report a problem and review a change | [Week 08](weeks/week08/README.md) |
+| 09 | Conflicts and recovery | Resolve a conflict; understand revert | [Week 09](weeks/week09/README.md) |
+| 10 | Continuous integration | Run automated checks on GitHub | [Week 10](weeks/week10/README.md) |
+| 11 | Team workflow I | Split work into issues and branches | [Week 11](weeks/week11/README.md) |
+| 12 | Team workflow II | Review and integrate tested changes | [Week 12](weeks/week12/README.md) |
+| 13 | Documentation | Write a README and record limitations | [Week 13](weeks/week13/README.md) |
+| 14 | Portfolio project | Package a small project and demo | [Week 14](weeks/week14/README.md) |
+| 15 | Project showcase | Present code, decisions, and lessons learned | [Week 15](weeks/week15/README.md) |
 
-- Section 1: approximately 40–60 students.
-- Section 2: approximately 100–120 students.
-- One fork per student, no central public directory of real identities.
-- The instructor holds a private roster mapping student identity to GitHub username.
-- Automatically score *machine-verifiable evidence*; manually review process,
-  authentic collaboration, documentation quality, and originality.
-- Auto-checks of answer worksheets test conceptual correctness, not actual
-  execution of commands; use spot checks and live activities accordingly.
+## Suggested personal practice
 
-## Proposed assessment weights (adjust to university policy)
+Create a small Python or C/C++ utility you can confidently explain. During the course, give it a clear README, tests, an issue, a feature branch, and a pull request. A small, well-maintained project is more valuable than many incomplete repositories.
 
-- Early Linux + Git worksheets: **30%** (six labs × 5%).
-- Collaboration and pull request practice: **25%**.
-- Individual final portfolio repository: **30%**.
-- Live practical skills demonstration: **15%**.
+## Prepare for each session
 
-There is no grade for starring or for follower count.
+- Read the lesson linked above.
+- Bring your laptop, a terminal, Git, and access to your GitHub account.
+- Write down commands you do not understand and try them on disposable sample files.
+- Keep a short changelog of what you learned.
+
+Submission instructions are in the [student guide](docs/STUDENT_GUIDE.md); your lecturer will announce due dates and any course-specific requirements.

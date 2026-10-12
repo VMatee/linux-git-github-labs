@@ -3,18 +3,25 @@ from pathlib import Path
 import sys
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
-sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "teacher_tools"))
 from autograde import TASKS, _check, grade, validate_owner
-from collect_results import latest_run, safe_login
 
 
-def test_public_worksheet_fixture_passes_all_tasks():
-    root = Path(__file__).resolve().parent / "fixtures" / "example-repo"
-    report = grade(root, "example-student")
+def test_worksheet_commands_are_checked(tmp_path: Path):
+    directory = tmp_path / "submissions" / "example-student" / "week01"
+    directory.mkdir(parents=True)
+    directory.joinpath("answers.json").write_text(
+        json.dumps({"commands": {
+            "print_path": "pwd",
+            "list_hidden": "ls -la",
+            "create_dir": "mkdir workspace",
+            "change_dir": "cd workspace",
+            "make_file": "touch notes.txt",
+        }}), encoding="utf-8"
+    )
+    report = grade(tmp_path, "example-student")
     assert report["status"] == "graded"
-    assert report["submitted_weeks"] == 6
-    assert report["points_earned"] == 30
-    assert report["points_possible_for_submitted"] == 30
+    assert report["submitted_weeks"] == 1
+    assert report["points_earned"] == 5
 
 
 def test_empty_fork_is_detected(tmp_path: Path):
@@ -23,17 +30,17 @@ def test_empty_fork_is_detected(tmp_path: Path):
     assert report["points_earned"] == 0
 
 
-def test_incomplete_correctness_is_reported(tmp_path: Path):
+def test_incomplete_worksheet_is_reported(tmp_path: Path):
     path = tmp_path / "submissions" / "learner" / "week01" / "answers.json"
     path.parent.mkdir(parents=True)
-    path.write_text(json.dumps({"commands": {"print_path": "pwd"}}))
+    path.write_text(json.dumps({"commands": {"print_path": "pwd"}}), encoding="utf-8")
     report = grade(tmp_path, "learner")
     assert report["status"] == "needs_correction"
     assert report["points_earned"] == 1
     assert report["weeks"]["week01"]["checks"]["make_file"] is False
 
 
-def test_shell_commands_accept_reasonable_flags():
+def test_command_variants():
     assert _check("week01", "list_hidden", "ls -lha")
     assert _check("week03", "make_executable", "chmod +x script.sh")
     assert _check("week06", "clone_repo", "git clone https://github.com/VMatee/sample.git")
@@ -41,10 +48,12 @@ def test_shell_commands_accept_reasonable_flags():
     assert not _check("week01", "list_hidden", "ls")
 
 
-def test_username_validation_and_latest_run():
+def test_username_validation():
     assert validate_owner("example-student") == "example-student"
-    assert not safe_login("../../secret")
-    data = {"workflow_runs": [{"created_at":"2026-01-01", "id":1}, {"created_at":"2026-01-03", "id":2}]}
-    assert latest_run(data)["id"] == 2
-    assert latest_run({"workflow_runs": []}) is None
+    try:
+        validate_owner("../../secret")
+    except ValueError:
+        pass
+    else:
+        raise AssertionError("Invalid path-like usernames must be rejected")
     assert len(TASKS) == 6

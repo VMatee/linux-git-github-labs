@@ -1,74 +1,65 @@
-# Linux, Git & GitHub Labs — Engineering Version Control
+# Linux, Git & GitHub Labs
 
-[![Autograde](https://github.com/VMatee/linux-git-github-labs/actions/workflows/autograde.yml/badge.svg)](https://github.com/VMatee/linux-git-github-labs/actions/workflows/autograde.yml)
+[![Learning checks](https://github.com/VMatee/linux-git-github-labs/actions/workflows/autograde.yml/badge.svg)](https://github.com/VMatee/linux-git-github-labs/actions/workflows/autograde.yml)
 
-An open introductory course for programmers who already know some Python,
-C/C++, but are new to Linux command-line work and team Git workflows.
-Designed for **13–15 class meetings**, two sections, and approximately
-**140–180 students**. No GitHub Classroom dependency.
+**From your first Linux command to your first collaborative pull request.**
 
-> **Audience:** Engineering students; no prior Linux or Git experience required.
-> **Public repo safety:** Never commit student IDs, grades, attendance,
-> private emails, passwords, service tokens or confidential coursework.
+A hands-on, beginner-friendly engineering course taught through short explanations, practical terminal exercises, and real GitHub workflows. You only need basic programming experience (Python, C, or C++); no prior Linux or Git experience is assumed.
 
-## Outcomes
+**15 sessions · Linux command line · Git · GitHub · collaboration · portfolio**
 
-1. Navigate Linux files, processes, permissions, streams and SSH safely.
-2. Use Git local history, branching, remotes, merges and recovery techniques.
-3. Collaborate with GitHub Issues, Forks, Pull Requests and code review.
-4. Understand continuous integration with GitHub Actions.
-5. Present a clear personal GitHub profile and a maintainable project.
+## Start learning
 
-## Start here
+1. [Read the student setup guide](docs/STUDENT_GUIDE.md).
+2. [Explore the 15-session learning roadmap](COURSE_PLAN.md).
+3. Open [Week 01: Linux navigation](weeks/week01/README.md) and follow the exercises.
+4. Work in a **disposable practice directory** and keep your work in your own GitHub fork.
+5. Use [GitHub Actions](https://github.com/VMatee/linux-git-github-labs/actions) to check the early command worksheets.
 
-- [Course roadmap](COURSE_PLAN.md) — all 15 meetings and corresponding practice.
-- [Student guide](docs/STUDENT_GUIDE.md) — fork, clone, submit and get feedback.
-- [Teacher guide](docs/TEACHER_GUIDE.md) — two sections and local CSV collector.
-- [Grading policy](docs/GRADING.md) — what can and cannot be automated.
-- [Weekly labs](weeks) — instructions for weeks 01–15.
-- [Submission templates](templates) — JSON command worksheets for weeks 01–06.
+> **Windows users:** Linux commands are intended for an actual Linux shell such as Ubuntu, WSL, or a lab Linux computer. PowerShell/CMD syntax is not always equivalent.
 
-## Demo for auto-checking (no network)
+## Learning roadmap
+
+| Stage | Sessions | You'll learn |
+| --- | --- | --- |
+| Terminal essentials | 01–03 | Directories, files, pipes, permissions, processes |
+| Version control | 04–06 | Commits, branches, merges, remotes |
+| Collaboration | 07–09 | Forks, pull requests, code review, conflicts |
+| Engineering workflow | 10–12 | GitHub Actions, team branches, integration |
+| Professional portfolio | 13–15 | Documentation, a working project, demo |
+
+[Browse all weekly lessons →](weeks/)
+
+## Your first GitHub contribution
 
 ```bash
-python -m pip install -e '.[dev]'
-python -m pytest -q
-python scripts/autograde.py --repository-owner example-student --root tests/fixtures/example-repo
+git clone https://github.com/YOUR_USERNAME/linux-git-github-labs.git
+cd linux-git-github-labs
+git switch -c lab/week01
+mkdir -p submissions/YOUR_USERNAME/week01
+cp templates/week01/answers.json submissions/YOUR_USERNAME/week01/answers.json
 ```
 
-Students edit their own forks, not this instructor repository. GitHub Actions
-runs the checker on `push` and `workflow_dispatch` (students must enable Actions
-in newly forked repositories). Score artifacts are for **formative checks**:
-automatic answers alone are never sufficient evidence of practical command
-execution or project contribution.
+Replace `YOUR_USERNAME` with your GitHub username, then edit the copied worksheet and follow the [student guide](docs/STUDENT_GUIDE.md) to commit and push. Fork this repository on GitHub **before** cloning your copy.
 
-## Grading architecture
+## What you'll create
 
-```text
-teacher repo (curriculum + public checker)
-                 |
-        GitHub Fork per student
-                 |
-          commits / branches
-                 |
-        GitHub Actions on fork
-                 |
-           grading-report
-                 |
-  teacher-only local roster + collector
-                 |
-         private CSV per section
-```
+- Terminal practice you can explain and repeat.
+- A readable commit history and meaningful feature branches.
+- Pull requests with a clear description and review discussion.
+- A small program with automated checks.
+- A portfolio-ready GitHub project with a useful README.
 
-Grades and real student identities remain local to the instructor. The collector
-is not a learning management system and does not replace faculty assessment.
+## Getting help
 
-## Open-source participation
+Read the relevant [weekly lesson](weeks/) first. If a command fails, capture the command, its exact error message, and what you expected it to do. Discuss it in your class channel. Please do not open public issues containing class-specific information or personal records.
 
-Forking, starring, watching and contributing are introduced as different GitHub
-activities. **Stars and forks are never required for course credit**, and the
-teacher never accepts artificial metrics as a substitute for meaningful work.
+**Safety:** never commit passwords, API tokens, private emails, student IDs, grades, or confidential course files. Run destructive commands only in temporary practice directories.
 
-## License
+## Community & license
 
-MIT for code, lesson material licensed CC BY 4.0 unless otherwise stated in a file.
+Useful open-source contributions are welcome—see [CONTRIBUTING.md](CONTRIBUTING.md). Following, starring, and forking are different GitHub features; stars and follower counts are **optional** and not part of coursework.
+
+Code is MIT licensed; original lesson text is licensed under [CC BY 4.0](CONTENT_LICENSE.md).
+
+Maintained by [VMatee](https://github.com/VMatee).

@@ -1,9 +1,0 @@
-{
-  "commands": {
-    "print_path": "pwd",
-    "list_hidden": "ls -la",
-    "create_dir": "mkdir workspace",
-    "change_dir": "cd workspace",
-    "make_file": "touch notes.txt"
-  }
-}

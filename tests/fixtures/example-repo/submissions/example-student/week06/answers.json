@@ -1,9 +1,0 @@
-{
-  "commands": {
-    "add_remote": "git remote add origin https://github.com/me/project.git",
-    "fetch_remote": "git fetch origin",
-    "push_branch": "git push origin feature",
-    "pull_remote": "git pull origin main",
-    "clone_repo": "git clone https://github.com/VMatee/sample.git"
-  }
-}
