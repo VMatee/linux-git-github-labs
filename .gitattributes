@@ -1,0 +1,2 @@
+# Keep shell scripts in Linux LF format on both Windows and Ubuntu.
+*.sh text eol=lf
