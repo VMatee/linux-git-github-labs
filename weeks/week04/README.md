@@ -1,5 +1,7 @@
 # Week 04: First local Git repository
 
+> **Your terminal:** On Windows use **Ubuntu in [WSL2](../../docs/setup/windows-wsl2.md)**; on Ubuntu Linux use the **native Ubuntu Terminal**. All commands in this lesson run inside Ubuntu. [Setup checklist](../../docs/setup/README.md).
+
 **Objective:** Initialize a Git repository. Stage a Python program, commit, and inspect the history.
 
 ## In-class practice

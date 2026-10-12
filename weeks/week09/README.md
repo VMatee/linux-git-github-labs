@@ -1,5 +1,7 @@
 # Week 09: Merge conflicts and recovery
 
+> **Your terminal:** On Windows use **Ubuntu in [WSL2](../../docs/setup/windows-wsl2.md)**; on Ubuntu Linux use the **native Ubuntu Terminal**. All commands in this lesson run inside Ubuntu. [Setup checklist](../../docs/setup/README.md).
+
 **Objective:** Create a small controlled conflict on an isolated repo, resolve it, and demonstrate `git revert`.
 
 ## In-class practice

@@ -1,5 +1,7 @@
 # Week 02: Read, copy, move and search
 
+> **Your terminal:** On Windows use **Ubuntu in [WSL2](../../docs/setup/windows-wsl2.md)**; on Ubuntu Linux use the **native Ubuntu Terminal**. All commands in this lesson run inside Ubuntu. [Setup checklist](../../docs/setup/README.md).
+
 **Objective:** Use `cat`, `cp`, `mv`, `rm`, and `grep`. Practice on a **disposable** directory.
 
 ## In-class practice

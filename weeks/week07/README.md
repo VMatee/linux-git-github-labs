@@ -1,5 +1,7 @@
 # Week 07: Forks and pull requests
 
+> **Your terminal:** On Windows use **Ubuntu in [WSL2](../../docs/setup/windows-wsl2.md)**; on Ubuntu Linux use the **native Ubuntu Terminal**. All commands in this lesson run inside Ubuntu. [Setup checklist](../../docs/setup/README.md).
+
 **Objective:** Fork the course repo. Make a change on a feature branch in **your fork**; open a PR within your fork and inspect the diff.
 
 ## In-class practice

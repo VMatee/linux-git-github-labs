@@ -1,5 +1,7 @@
 # Week 10: Introduction to CI
 
+> **Your terminal:** On Windows use **Ubuntu in [WSL2](../../docs/setup/windows-wsl2.md)**; on Ubuntu Linux use the **native Ubuntu Terminal**. All commands in this lesson run inside Ubuntu. [Setup checklist](../../docs/setup/README.md).
+
 **Objective:** Add a Python unittest/pytest or C/C++ compiler check to your personal repository using GitHub Actions.
 
 ## In-class practice

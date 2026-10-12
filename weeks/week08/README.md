@@ -1,5 +1,7 @@
 # Week 08: Issues and reviews
 
+> **Your terminal:** On Windows use **Ubuntu in [WSL2](../../docs/setup/windows-wsl2.md)**; on Ubuntu Linux use the **native Ubuntu Terminal**. All commands in this lesson run inside Ubuntu. [Setup checklist](../../docs/setup/README.md).
+
 **Objective:** Create an issue for a clear improvement, review a classmate's change respectfully, and suggest a test.
 
 ## In-class practice

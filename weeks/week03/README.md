@@ -1,5 +1,7 @@
 # Week 03: Permissions, processes and streams
 
+> **Your terminal:** On Windows use **Ubuntu in [WSL2](../../docs/setup/windows-wsl2.md)**; on Ubuntu Linux use the **native Ubuntu Terminal**. All commands in this lesson run inside Ubuntu. [Setup checklist](../../docs/setup/README.md).
+
 **Objective:** Use `chmod`, `ps`, shell pipes `|`, redirection `>` and `sort`. Avoid `sudo`.
 
 ## In-class practice

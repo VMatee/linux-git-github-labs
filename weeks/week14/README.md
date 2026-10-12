@@ -1,5 +1,7 @@
 # Week 14: Portfolio final project
 
+> **Your terminal:** On Windows use **Ubuntu in [WSL2](../../docs/setup/windows-wsl2.md)**; on Ubuntu Linux use the **native Ubuntu Terminal**. All commands in this lesson run inside Ubuntu. [Setup checklist](../../docs/setup/README.md).
+
 **Objective:** Choose a small authentic engineering/programming project. Add executable code, tests and a demo.
 
 ## In-class practice

@@ -1,5 +1,7 @@
 # Week 05: Branching and merging
 
+> **Your terminal:** On Windows use **Ubuntu in [WSL2](../../docs/setup/windows-wsl2.md)**; on Ubuntu Linux use the **native Ubuntu Terminal**. All commands in this lesson run inside Ubuntu. [Setup checklist](../../docs/setup/README.md).
+
 **Objective:** Create a feature branch, commit a change, switch to main, and merge it.
 
 ## In-class practice
